@@ -35,6 +35,7 @@ query_task:
     # 用户 uid 列表，参考 https://space.bilibili.com/1795147802
     uid_list:
       - 1660392980
+      - 32926476
     # 是否跳过提醒"转发"类型的动态 true/false
     skip_forward: true
     # 如果请求提示 -352, 可以填入下面两项之一, 建议使用 payload 自动获取buvid3
