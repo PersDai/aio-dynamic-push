@@ -5,7 +5,7 @@ common:
     enable: false
     # ip池地址，参考 https://github.com/jhao104/proxy_pool
     proxy_pool_url: http://ip:port
-  # 推送通道
+  # 推送通道 
   push_channel:
     # 是否在项目启动时，给各通道发送一条测试消息 true/false
     send_test_msg_when_start: false
@@ -14,7 +14,7 @@ query_task:
   # 任务名称，可自定义
   - name: 任务_bilibili
     # 是否启用 true/false
-    enable: false
+    enable: true
     # 任务类型，bilibili/weibo/xhs/douyin
     type: bilibili
     # 查询间隔，单位秒，不建议设置太频繁
@@ -25,20 +25,14 @@ query_task:
     end_time: "23:59"
     # 推送通道名称，对应 push_channel 中的 name
     target_push_name_list:
-      - 推送通道_企业微信应用
-      - 推送通道_钉钉机器人
+      - 推送通道_Telegram机器人
     # 是否启用动态检测 true/false
     enable_dynamic_check: true
     # 是否启用直播检测 true/false
     enable_living_check: true
     # 用户 uid 列表，参考 https://space.bilibili.com/1795147802
     uid_list:
-      - 1795147802
-      - 1669777785
-      - 1778026586
-      - 1875044092
-      - 1811071010
-      - 2018113152
+      - 1660392980
     # 是否跳过提醒"转发"类型的动态 true/false
     skip_forward: true
     # 如果请求提示 -352, 可以填入下面两项之一, 建议使用 payload 自动获取buvid3
@@ -47,35 +41,31 @@ query_task:
     # 浏览器指纹，取自于 /x/internal/gaia-gateway/ExClimbWuzhi 接口的body，需要填入的是payload参数的value，用于自动获取并激活buvid3
     payload: ""
   - name: 任务_weibo
-    enable: false
+    enable: true
     type: weibo
     intervals_second: 60
     begin_time: "00:00"
     end_time: "23:59"
     target_push_name_list:
-      - 推送通道_企业微信应用
-      - 推送通道_钉钉机器人
+      - 推送通道_Telegram机器人
     enable_dynamic_check: true
     # 用户 uid 列表，参考 https://weibo.com/u/7198559139
     uid_list:
-      - 7198559139
-      - 1765893783
+      - 7569110245
     # 登录用户的cookie，用于查询"仅粉丝可见"，如果不查这类微博暂时无需配置。浏览器打开 https://m.weibo.cn 登录后，按F12刷新，在 Network 中找到任意请求，把请求头中的cookie复制过来即可
     cookie: ""
   - name: 任务_xhs
-    enable: false
+    enable: true
     type: xhs
     intervals_second: 300
     begin_time: "00:00"
     end_time: "23:59"
     target_push_name_list:
-      - 推送通道_企业微信应用
-      - 推送通道_钉钉机器人
+      - 推送通道_Telegram机器人
     enable_dynamic_check: true
     # 用户 profile_id 列表，参考 https://www.xiaohongshu.com/user/profile/52d8c541b4c4d60e6c867480
     profile_id_list:
-      - 52d8c541b4c4d60e6c867480
-      - 5bf64788aa4b0a000114b879
+      - 611bbf00000000000100a109
   - name: 任务_douyin
     enable: false
     type: douyin
@@ -83,8 +73,7 @@ query_task:
     begin_time: "00:00"
     end_time: "23:59"
     target_push_name_list:
-      - 推送通道_企业微信应用
-      - 推送通道_钉钉机器人
+      - 推送通道_Telegram机器人
     enable_dynamic_check: false # 抖音动态监测目前坏了，还没修好
     # 签名服务器url，参考 https://github.com/coder-fly/douyin-signature
     signature_server_url: http://ip:port
@@ -175,12 +164,12 @@ push_channel:
     # 飞书机器人webhook key，如果启动该推送则必填
     webhook_key:
   - name: 推送通道_Telegram机器人
-    enable: false
+    enable: true
     type: telegram_bot
     # Telegram 机器人的token，如果启动该推送则必填
-    api_token:
+    api_token:7764210334:AAEvMIfTiIa0GQXoeEsnQ6ZcOQhe_WO8K0w
     # Telegram 机器人的chat_id，如果启动该推送则必填，详见 https://api.telegram.org/bot<YOUR_API_TOKEN>/getUpdates
-    chat_id:
+    chat_id:@persdaibot
   - name: 推送通道_QQ机器人
     enable: false
     type: qq_bot
