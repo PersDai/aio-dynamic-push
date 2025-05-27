@@ -10,7 +10,6 @@ common:
     任务_bilibili
     任务_weibo
     # 是否在项目启动时，给各通道发送一条测试消息 true/false
-    send_test_msg_when_start: false
     send_test_msg_when_start: true
 
 query_task:
